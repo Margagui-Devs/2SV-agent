@@ -127,7 +127,7 @@
       "threshold": "Soglia di registrazione (in pixel)",
       "description_threshold": "Numero di pixel modificati per avviare la registrazione",
       "autoclean": "Cancellazione automatica",
-      "description_autoclean": "Specificare se l'Agente Kerberos può cancellare le registrazioni quando viene raggiunta una specifica capacità di archiviazione (in MB). Questo rimuoverà le registrazioni più vecchie quando la capacità viene raggiunta.",
+      "description_autoclean": "Specificare se l'Agente 2SV può cancellare le registrazioni quando viene raggiunta una specifica capacità di archiviazione (in MB). Questo rimuoverà le registrazioni più vecchie quando la capacità viene raggiunta.",
       "autoclean_enable": "Abilita cancellazione automatica",
       "autoclean_description_enable": "Rimuovere la registrazione più vecchia al raggiungimento della capacità.",
       "autoclean_max_directory_size": "Dimensione massima della cartella (in MB)",

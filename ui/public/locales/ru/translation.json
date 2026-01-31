@@ -199,7 +199,7 @@
       "kerberoshub_privatekey": "Закрытый ключ",
       "kerberoshub_description_privatekey": "Закрытый ключ, присвоенный вашей учетной записи 2SV Hub.",
       "kerberoshub_site": "Сайт",
-      "kerberoshub_description_site": "Идентификатор сайта, к которому принадлежат агенты Kerberos (Agent) в 2SV Hub.",
+      "kerberoshub_description_site": "Идентификатор сайта, к которому принадлежат агенты 2SV (Agent) в 2SV Hub.",
       "kerberoshub_region": "Регион",
       "kerberoshub_description_region": "Регион, в котором хранятся наши записи.",
       "kerberoshub_bucket": "Bucket",
@@ -221,7 +221,7 @@
       "dropbox_accesstoken": "Токен доступа",
       "dropbox_description_accesstoken": "Токен доступа вашего аккаунта/приложения Dropbox.",
       "verify_connection": "Проверка соединения",
-      "remove_after_upload": "Как только записи будут загружены на какой-либо сервер, вы, возможно, захотите удалить их из локального агента Kerberos.",
+      "remove_after_upload": "Как только записи будут загружены на какой-либо сервер, вы, возможно, захотите удалить их из локального агента 2SV.",
       "remove_after_upload_description": "Удаление записей после их успешной загрузки.",
       "remove_after_upload_enabled": "Включено удаление при выгрузке"
     }

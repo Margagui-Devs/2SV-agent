@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: agent
-          image: kerberos/agent:latest
+          image: margagui/2sv-agent:latest
           ports:
             - containerPort: 80
               protocol: TCP
@@ -31,12 +31,12 @@ spec:
             - name: AGENT_NAME
               value: demo-agent
             - name: AGENT_CAPTURE_IPCAMERA_RTSP
-              value: rtsp://fake.kerberos.io/stream
+              value: rtsp://fake.2SV/stream
             - name: AGENT_HUB_KEY
               value: yyy
             - name: AGENT_HUB_PRIVATE_KEY
               value: yyy
-            # find full list of environment variables here: https://github.com/kerberos-io/agent#override-with-environment-variables
+            # find full list of environment variables here: https://github.com/margagui/2sv-agent#override-with-environment-variables
 ---
 apiVersion: v1
 kind: Service
@@ -66,10 +66,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "demo.kerberos.io"
+        - "demo.2SV"
       secretName: agent-secret
   rules:
-  - host: demo.kerberos.io
+  - host: demo.2SV
     http:
       paths:
       - pathType: Prefix

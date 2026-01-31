@@ -100,7 +100,7 @@ class App extends React.Component {
           </div>
         )}
         <div id="page-root">
-          <Sidebar logo={logo} title="Kerberos Agent" version="v3.1.8" mobile>
+          <Sidebar logo={logo} title="2SV Agent" version="v3.1.8" mobile>
             <Profilebar
               username={username}
               email="support@kerberos.io"
@@ -141,7 +141,7 @@ class App extends React.Component {
                   link="https://doc.kerberos.io/agent/announcement"
                 />
                 <NavigationItem
-                  title="Kerberos Hub"
+                  title="2SV Hub"
                   icon="cloud"
                   external
                   link="https://app.kerberos.io"
@@ -156,7 +156,7 @@ class App extends React.Component {
                   title="Github"
                   icon="github-nav"
                   external
-                  link="https://github.com/kerberos-io/agent"
+                  link="https://github.com/Margagui-Devs/2SV-agent"
                 />
               </NavigationGroup>
               <NavigationSection title={t('navigation.layout')} />
@@ -187,7 +187,7 @@ class App extends React.Component {
                 <div className="cloud-not-installed">
                   <div>
                     <Icon label="cloud" />
-                    Activate Kerberos Hub, and make your cameras and recordings
+                    Activate 2SV Hub, and make your cameras and recordings
                     available through a secured cloud!
                   </div>
                 </div>
@@ -199,7 +199,7 @@ class App extends React.Component {
                 <div className="offline-mode">
                   <div>
                     <Icon label="info" />
-                    Attention! Kerberos is currently running in Offline mode.
+                    Attention! 2SV is currently running in Offline mode.
                   </div>
                 </div>
               </Link>

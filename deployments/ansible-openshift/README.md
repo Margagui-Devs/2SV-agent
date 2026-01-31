@@ -1,6 +1,6 @@
 # Deploy to a Red Hat OpenShift cluster with Ansible
 
-Kubernetes is great, but you might love OpenShift even more. In this directory you'll find some resources to deploy your Kerberos Agent in an OpenShift cluster using Ansible playbook. We'll review the different tasks of the Ansible playbook step by step; find the complete `playbook.yaml` here.
+Kubernetes is great, but you might love OpenShift even more. In this directory you'll find some resources to deploy your 2SV Agent in an OpenShift cluster using Ansible playbook. We'll review the different tasks of the Ansible playbook step by step; find the complete `playbook.yaml` here.
 
 ## Variabeles
 
@@ -19,8 +19,8 @@ Once we have supplied the `variables` we will define following tasks:
     - name: Try to login to OCP cluster
     - name: Create a Namespace
     - name: Create a Persistent volume claim
-    - name: Deploy Kerberos Agent
-    - name: Expose Kerberos Agent
+    - name: Deploy 2SV Agent
+    - name: Expose 2SV Agent
 
 1. Print variables: this is a validation step, where we make sure we have the correct variables supplied to the `ansible-playbook` command. This confirms we are using the right credentials to setup a secure connection with the OpenShift cluster.
 
@@ -30,9 +30,9 @@ Once we have supplied the `variables` we will define following tasks:
 
 4. (Optional) Create a persistent volume to persist the configuration file and recordings in a volume.
 
-5. Deploy Kerberos Agent through a `deployment`.
+5. Deploy 2SV Agent through a `deployment`.
 
-6. Expose the Kerberos Agent web interface through a `LoadBalancer`; public internet accessible IP address.
+6. Expose the 2SV Agent web interface through a `LoadBalancer`; public internet accessible IP address.
 
 ## Run the playbook
 
@@ -46,4 +46,4 @@ Specify the `environment` input variable as a `JSON` with all required variables
     "oc_password":"xxx" \
     }' playbook.yml
 
-If everything runs as expected you should see you Kerberos Agent deployed, together with an assigned public ip address. Paste the ip address in your browser, the Kerberos Agent web interface will show up. You can use [the default username and password to sign-in](https://github.com/kerberos-io/agent#access-the-kerberos-agent), or if changed to your own (which is recommended).
+If everything runs as expected you should see you 2SV Agent deployed, together with an assigned public ip address. Paste the ip address in your browser, the 2SV Agent web interface will show up. You can use [the default username and password to sign-in](https://github.com/margagui/2sv-agent#access-the-2SV-agent), or if changed to your own (which is recommended).

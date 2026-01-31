@@ -1,20 +1,20 @@
 # Deployment with Kubernetes
 
-As described in the [Deployment with Docker](https://github.com/kerberos-io/agent/tree/master/deployments/docker), `docker` is a great tool for smaller deployments, where you are just running on a single machine and want to ramp up quickly. As you might expect, this is a not an ideal situation for production deployments.
+As described in the [Deployment with Docker](https://github.com/margagui/2sv-agent/tree/master/deployments/docker), `docker` is a great tool for smaller deployments, where you are just running on a single machine and want to ramp up quickly. As you might expect, this is a not an ideal situation for production deployments.
 
-Kubernetes can help you to build a scalable, flexible and resilient deployment. By introducing the concept of multi-nodes and deployments, you can make sure your Kerberos Agents are evenly distributed across your different machines, and you can add more nodes when you need to scale out.
+Kubernetes can help you to build a scalable, flexible and resilient deployment. By introducing the concept of multi-nodes and deployments, you can make sure your 2SV Agents are evenly distributed across your different machines, and you can add more nodes when you need to scale out.
 
-We've provided an example deployment `deployment-agent.yml` in this directory, which show case you have to create a deployment (and under the hood a pod), to run a Kerberos Agent workload.
+We've provided an example deployment `deployment-agent.yml` in this directory, which show case you have to create a deployment (and under the hood a pod), to run a 2SV Agent workload.
 
-## Create a Kerberos Agent deployment
+## Create a 2SV Agent deployment
 
 It's always a best practices to isolate and structure your workloads in Kubernetes. To achieve this we are utilising the concept of namespaces. For this example we will create a new namespace `demo`.
 
     kubectl create namespace demo
 
-Now we have a namespace, have a look at `deployment-agent.yml` in this folder. This configuration file describes the Kubernetes resources we would like to create, and how the Kerberos Agent needs to behave: environment variables, container ports, etc. At the bottom of the file, we find a `service` part, this tells Kubernetes to expose the Kerberos Agent user interface on a publicly accessible IP address. **_Please note that you don't need to expose this, as you can configure the Kerberos Agent with a volume and/or environment variables._**
+Now we have a namespace, have a look at `deployment-agent.yml` in this folder. This configuration file describes the Kubernetes resources we would like to create, and how the 2SV Agent needs to behave: environment variables, container ports, etc. At the bottom of the file, we find a `service` part, this tells Kubernetes to expose the 2SV Agent user interface on a publicly accessible IP address. **_Please note that you don't need to expose this, as you can configure the 2SV Agent with a volume and/or environment variables._**
 
-Let's move on, and apply the Kerberos Agent deployment and service.
+Let's move on, and apply the 2SV Agent deployment and service.
 
     kubectl apply -f deployment-agent.yml -n demo
 
@@ -38,11 +38,11 @@ When the deployment and service is created successfully, you should see somethin
     NAME                               DESIRED   CURRENT   READY   AGE
     replicaset.apps/agent-7c75c4dbcf   1         1         1       20s
 
-When copying the `EXTERNAL-IP` and pasting it in your browser, you should see the Kerberos Agent user interface. You can use [the default username and password to sign-in](https://github.com/kerberos-io/agent#access-the-kerberos-agent), or if changed to your own (which is recommended).
+When copying the `EXTERNAL-IP` and pasting it in your browser, you should see the 2SV Agent user interface. You can use [the default username and password to sign-in](https://github.com/margagui/2sv-agent#access-the-2SV-agent), or if changed to your own (which is recommended).
 
 ## Configure with volumes
 
-Just like with `docker`, you can also attach `volumes` to the Kerberos Agent deployment, by creating a `Persistent Volume` and mount it to a specific directory.
+Just like with `docker`, you can also attach `volumes` to the 2SV Agent deployment, by creating a `Persistent Volume` and mount it to a specific directory.
 
 Depending on where and how you are hosting the Kubernetes cluster, you may need to create a new `storageClass` or use a predefined `storageClass` from your cloud provider (Azure, GCP, AWS, ..). Have a look at `deployment-agent-volume.yml` to review a complete example.
 
@@ -52,22 +52,22 @@ Depending on where and how you are hosting the Kubernetes cluster, you may need 
         app: agent
     spec:
         volumes:
-        - name: kerberos-data
+        - name: 2SV-data
             persistentVolumeClaim:
-            claimName: kerberos-data
+            claimName: 2SV-data
         ...
         containers:
         - name: agent
-          image: kerberos/agent:latest
+          image: margagui/2sv-agent:latest
           volumeMounts:
-            - name: kerberos-data
+            - name: 2SV-data
               mountPath: /home/agent/data/config
               subPath: config
         ...
 
 ## Expose with Ingress
 
-In the first example `deployment-agent.yml` we are using a `LoadBalancer` to expose the Kerberos Agent user interface; as shown below. If you are a bit more experienced with Kubernetes, you will know there are other `service types` as well.
+In the first example `deployment-agent.yml` we are using a `LoadBalancer` to expose the 2SV Agent user interface; as shown below. If you are a bit more experienced with Kubernetes, you will know there are other `service types` as well.
 
     ---
     apiVersion: v1
@@ -96,10 +96,10 @@ A huge benefit (there are many others), is that you only allocate 1 public IP ad
     spec:
     tls:
         - hosts:
-            - "myagent.kerberos.io"
+            - "myagent.2SV"
         secretName: agent-secret
     rules:
-    - host: myagent.kerberos.io
+    - host: myagent.2SV
         http:
         paths:
         - pathType: Prefix

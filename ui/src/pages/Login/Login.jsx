@@ -56,7 +56,7 @@ class Login extends React.Component {
           </div>
         )}
         <LandingLayout
-          title="Kerberos Agent"
+          title="2SV Agent"
           version={config.VERSION}
           description="Video surveillance for everyone"
         >

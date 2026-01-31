@@ -15,15 +15,15 @@ spec:
         app: agent
     spec:
       volumes:
-        - name: kerberos-data
+        - name: 2SV-data
           persistentVolumeClaim:
-            claimName: kerberos-data
+            claimName: 2SV-data
 
       initContainers:
         - name: download-config
-          image: kerberos/agent:latest
+          image: margagui/2sv-agent:latest
           volumeMounts:
-            - name: kerberos-data
+            - name: 2SV-data
               mountPath: /home/agent/data/config
               subPath: config
           command:
@@ -35,18 +35,18 @@ spec:
 
       containers:
         - name: agent
-          image: kerberos/agent:latest
+          image: margagui/2sv-agent:latest
           volumeMounts:
-            - name: kerberos-data
+            - name: 2SV-data
               mountPath: /home/agent/data/config
               subPath: config
-            - name: kerberos-data
+            - name: 2SV-data
               mountPath: /home/agent/data/recordings
               subPath: recordings
-            - name: kerberos-data
+            - name: 2SV-data
               mountPath: /home/agent/data/snapshots
               subPath: snapshots
-            - name: kerberos-data
+            - name: 2SV-data
               mountPath: /home/agent/data/cloud
               subPath: cloud
           ports:

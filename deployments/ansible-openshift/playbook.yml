@@ -26,7 +26,7 @@
           apiVersion: v1
           kind: Namespace
           metadata:
-            name: kerberos
+            name: 2SV
       register: k8s_namespace_result
 
     - name: Create a Persistent volume claim
@@ -35,12 +35,12 @@
         host: "{{ oc_cluster_url }}"
         api_key: "{{ k8s_auth_result.k8s_auth.api_key }}"
         validate_certs: no
-        namespace: kerberos
+        namespace: 2SV
         definition:
           apiVersion: v1
           kind: PersistentVolumeClaim
           metadata:
-            name: kerberos-data
+            name: 2SV-data
           spec:
             accessModes:
               - ReadWriteOnce
@@ -50,11 +50,11 @@
             storageClassName: managed-premium
       register: pvc_result
 
-    - name: Deploy Kerberos Agent
+    - name: Deploy 2SV Agent
       k8s:
         state: present
         apply: yes
-        namespace: kerberos
+        namespace: 2SV
         host: "{{ oc_cluster_url }}"
         api_key: "{{ k8s_auth_result.k8s_auth.api_key }}"
         validate_certs: no
@@ -76,15 +76,15 @@
                   app: agent
               spec:
                 volumes:
-                  - name: kerberos-data
+                  - name: 2SV-data
                     persistentVolumeClaim:
-                      claimName: kerberos-data
+                      claimName: 2SV-data
 
                 initContainers:
                   - name: download-config
-                    image: kerberos/agent:latest
+                    image: margagui/2sv-agent:latest
                     volumeMounts:
-                      - name: kerberos-data
+                      - name: 2SV-data
                         mountPath: /home/agent/data/config
                         subPath: config
                     command:
@@ -96,29 +96,29 @@
 
                 containers:
                   - name: agent
-                    image: kerberos/agent:latest
+                    image: margagui/2sv-agent:latest
                     volumeMounts:
-                      - name: kerberos-data
+                      - name: 2SV-data
                         mountPath: /home/agent/data/config
                         subPath: config
-                      - name: kerberos-data
+                      - name: 2SV-data
                         mountPath: /home/agent/data/recordings
                         subPath: recordings
-                      - name: kerberos-data
+                      - name: 2SV-data
                         mountPath: /home/agent/data/snapshots
                         subPath: snapshots
-                      - name: kerberos-data
+                      - name: 2SV-data
                         mountPath: /home/agent/data/cloud
                         subPath: cloud
                     ports:
                       - containerPort: 80
                         protocol: TCP
 
-    - name: Expose Kerberos Agent
+    - name: Expose 2SV Agent
       k8s:
         state: present
         apply: yes
-        namespace: kerberos
+        namespace: 2SV
         host: "{{ oc_cluster_url }}"
         api_key: "{{ k8s_auth_result.k8s_auth.api_key }}"
         validate_certs: no

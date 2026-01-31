@@ -1,11 +1,11 @@
 # Binary
 
-Kerberos Agents are now also shipped as static binaries. Within the Docker image build, we are extracting the Kerberos Agent binary and are [uploading them to the releases page](https://github.com/kerberos-io/agent/releases) in the repository. By opening a release you'll find a `.tar` with the relevant files.
+2SV Agents are now also shipped as static binaries. Within the Docker image build, we are extracting the 2SV Agent binary and are [uploading them to the releases page](https://github.com/margagui/2sv-agent/releases) in the repository. By opening a release you'll find a `.tar` with the relevant files.
 
-- `main`: this is the Kerberos Agent binary.
+- `main`: this is the 2SV Agent binary.
 - `data`: the folder containing the recorded video, configuration, etc.
 - `mp4fragment`: a binary to transform MP4s to Fragmented MP4s.
-- `www`: the Kerberos Agent ui (compiled React app).
+- `www`: the 2SV Agent ui (compiled React app).
 
 You can run the binary as following on port `8080`:
 
@@ -13,7 +13,7 @@ You can run the binary as following on port `8080`:
 
 ## Systemd
 
-When running on a Linux OS you might consider to auto-start the Kerberos Agent using systemd. Create a file called `/etc/systemd/system/kerberos-agent.service` and copy-paste following configuration. Update the `WorkingDirectory` and `ExecStart` accordingly.
+When running on a Linux OS you might consider to auto-start the 2SV Agent using systemd. Create a file called `/etc/systemd/system/2SV-agent.service` and copy-paste following configuration. Update the `WorkingDirectory` and `ExecStart` accordingly.
 
     [Unit]
     Wants=network.target
@@ -26,9 +26,9 @@ When running on a Linux OS you might consider to auto-start the Kerberos Agent u
 To load your new service, we'll execute following commands.
 
     sudo systemctl daemon-reload
-    sudo systemctl enable kerberos-agent
-    sudo systemctl start kerberos-agent
+    sudo systemctl enable 2SV-agent
+    sudo systemctl start 2SV-agent
 
 Confirm the service is running:
 
-    sudo systemctl status kerberos-agent
+    sudo systemctl status 2SV-agent
