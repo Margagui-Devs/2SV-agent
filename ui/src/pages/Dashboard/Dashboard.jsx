@@ -185,7 +185,7 @@ class Dashboard extends React.Component {
           </Link>
           <Link to="/settings">
             <Card
-              title="Kerberos Hub"
+              title="2SV Hub"
               subtitle={cloudConnection}
               footer="Cloud"
               icon={

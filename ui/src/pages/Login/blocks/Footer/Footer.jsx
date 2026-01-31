@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className={styles.footer}>
       <ul>
-        <li>Kerberos.io</li>
+        <li>2SV Agent</li>
         <li>Github</li>
         <li>Twitter</li>
         <li>Reddit</li>

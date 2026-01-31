@@ -337,12 +337,12 @@ info:
     email: support@kerberos.io
     name: API Support
     url: https://www.kerberos.io
-  description: This is the API for using and configure Kerberos Agent.
+  description: This is the API for using and configure 2SV Agent.
   license:
     name: Apache 2.0 - Commons Clause
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://kerberos.io
-  title: Swagger Kerberos Agent API
+  title: Swagger 2SV Agent API
   version: "1.0"
 paths:
   /api/camera/onvif/capabilities:

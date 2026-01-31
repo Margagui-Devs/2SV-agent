@@ -189,7 +189,7 @@
       "description2_persistence": ", या कोई तृतीय पक्ष प्रदाता",
       "select_persistence": "एक दृढ़ता का चयन करें",
       "kerberoshub_encryption": "Encryption",
-      "kerberoshub_encryption_description": "All traffic from/to Kerberos Hub will encrypted using AES-256.",
+      "kerberoshub_encryption_description": "All traffic from/to 2SV Hub will encrypted using AES-256.",
       "kerberoshub_proxyurl": "Kerberos हब प्रॉक्सी  URL",
       "kerberoshub_description_proxyurl": "आपकी रिकॉर्डिंग अपलोड करने के लिए प्रॉक्सी एंडपॉइंट।",
       "kerberoshub_apiurl": "Kerberos हब API  URL",

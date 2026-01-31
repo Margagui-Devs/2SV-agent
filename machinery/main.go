@@ -102,7 +102,7 @@ func main() {
 
 	case "version":
 		{
-			log.Log.Info("main.Main(): You are currrently running Kerberos Agent " + VERSION)
+			log.Log.Info("main.Main(): You are currrently running 2SV Agent " + VERSION)
 		}
 	case "discover":
 		{

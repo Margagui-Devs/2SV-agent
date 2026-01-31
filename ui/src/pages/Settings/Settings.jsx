@@ -80,11 +80,11 @@ class Settings extends React.Component {
     };
     this.storageTypes = [
       {
-        label: 'Kerberos Hub',
+        label: '2SV Hub',
         value: this.KERBEROS_HUB,
       },
       {
-        label: 'Kerberos Vault',
+        label: '2SV Vault',
         value: this.KERBEROS_VAULT,
       },
       {
@@ -98,15 +98,15 @@ class Settings extends React.Component {
       mqtt: ['mqtt', 'message broker', 'events', 'broker'],
       'stun-turn': ['webrtc', 'stun', 'turn', 'livestreaming'],
       'kerberos-hub': [
-        'kerberos hub',
+        '2sv hub',
         'dashboard',
         'agents',
         'monitoring',
         'site',
       ],
       persistence: [
-        'kerberos hub',
-        'kerberos vault',
+        '2sv hub',
+        '2sv vault',
         'storage',
         'persistence',
         'gcp',
@@ -1304,7 +1304,7 @@ class Settings extends React.Component {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Kerberos Hub
+                      2SV Hub
                     </a>{' '}
                     {t('settings.persistence.description2_kerberoshub')}
                   </p>
@@ -1616,7 +1616,7 @@ class Settings extends React.Component {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Kerberos Hub
+                      2SV Hub
                     </a>{' '}
                     {t('settings.streaming.description2_mqtt')}
                   </p>
@@ -2411,7 +2411,7 @@ class Settings extends React.Component {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Kerberos Vault
+                      2SV Vault
                     </a>
                     {t('settings.persistence.description2_persistence')}.
                   </p>
