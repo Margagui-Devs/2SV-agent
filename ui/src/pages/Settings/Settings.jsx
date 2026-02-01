@@ -99,7 +99,14 @@ class Settings extends React.Component {
       'stun-turn': ['webrtc', 'stun', 'turn', 'livestreaming'],
       'kerberos-hub': ['2sv hub', 'dashboard', 'agents', 'monitoring', 'site'],
       persistence: [
-        '2sv hub', '2sv vault', 'storage', 'persistence', 'gcp', 'aws', 'minio', 'dropbox',
+        '2sv hub',
+        '2sv vault',
+        'storage',
+        'persistence',
+        'gcp',
+        'aws',
+        'minio',
+        'dropbox',
       ],
     };
     this.timezones = [];
@@ -107,7 +114,7 @@ class Settings extends React.Component {
       this.timezones.push({
         label: t.text,
         value: t.utc[0],
-      })
+      }),
     );
 
     this.changeTab = this.changeTab.bind(this);
@@ -319,7 +326,7 @@ class Settings extends React.Component {
             configSuccess: false,
             configError: true,
           });
-        }
+        },
       );
     }
   }
@@ -367,7 +374,7 @@ class Settings extends React.Component {
             verifyOnvifErrorMessage: error,
             loadingOnvif: false,
           });
-        }
+        },
       );
     }
   }
@@ -426,7 +433,7 @@ class Settings extends React.Component {
             hubError: false,
             loadingHub: false,
           });
-        }
+        },
       );
     }
   }
@@ -477,7 +484,7 @@ class Settings extends React.Component {
             loading: false,
             loadingSecondary: false,
           });
-        }
+        },
       );
     }
   }
@@ -528,7 +535,7 @@ class Settings extends React.Component {
             loading: false,
             loadingSecondary: false,
           });
-        }
+        },
       );
     }
   }
@@ -576,7 +583,7 @@ class Settings extends React.Component {
             verifyCameraErrorMessage: error,
             loadingCamera: false,
           });
-        }
+        },
       );
     }
   }
@@ -802,7 +809,7 @@ class Settings extends React.Component {
           <InfoBar
             type="alert"
             message={`${t(
-              'settings.info.verify_camera_error'
+              'settings.info.verify_camera_error',
             )}: ${verifyCameraErrorMessage}`}
           />
         )}
@@ -833,7 +840,7 @@ class Settings extends React.Component {
           <InfoBar
             type="alert"
             message={`${t(
-              'settings.info.verify_hub_error'
+              'settings.info.verify_hub_error',
             )} :${verifyHubErrorMessage}`}
           />
         )}
@@ -854,7 +861,7 @@ class Settings extends React.Component {
           <InfoBar
             type="alert"
             message={`${t(
-              'settings.info.verify_persistence_error'
+              'settings.info.verify_persistence_error',
             )} :${verifyPersistenceMessage}`}
           />
         )}
@@ -868,7 +875,7 @@ class Settings extends React.Component {
           <InfoBar
             type="alert"
             message={`${t(
-              'settings.info.verify_persistence_error'
+              'settings.info.verify_persistence_error',
             )} :${verifySecondaryPersistenceMessage}`}
           />
         )}
@@ -975,7 +982,7 @@ class Settings extends React.Component {
                         'capture.ipcamera',
                         'rtsp',
                         value,
-                        config.capture.ipcamera
+                        config.capture.ipcamera,
                       )
                     }
                   />
@@ -989,7 +996,7 @@ class Settings extends React.Component {
                         'capture.ipcamera',
                         'sub_rtsp',
                         value,
-                        config.capture.ipcamera
+                        config.capture.ipcamera,
                       )
                     }
                   />
@@ -1040,7 +1047,7 @@ class Settings extends React.Component {
                           'capture',
                           'continuous',
                           event,
-                          config.capture
+                          config.capture,
                         )
                       }
                     />
@@ -1050,7 +1057,7 @@ class Settings extends React.Component {
                       </span>
                       <p>
                         {t(
-                          'settings.recording.description_continuous_recording'
+                          'settings.recording.description_continuous_recording',
                         )}
                       </p>
                     </div>
@@ -1061,14 +1068,14 @@ class Settings extends React.Component {
                     label={t('settings.recording.max_duration')}
                     value={config.capture.maxlengthrecording}
                     placeholder={t(
-                      'settings.recording.description_max_duration'
+                      'settings.recording.description_max_duration',
                     )}
                     onChange={(value) =>
                       this.onUpdateNumberField(
                         'capture',
                         'maxlengthrecording',
                         value,
-                        config.capture
+                        config.capture,
                       )
                     }
                   />
@@ -1085,7 +1092,7 @@ class Settings extends React.Component {
                             'capture',
                             'prerecording',
                             value,
-                            config.capture
+                            config.capture,
                           )
                         }
                       />
@@ -1099,7 +1106,7 @@ class Settings extends React.Component {
                             'capture',
                             'postrecording',
                             value,
-                            config.capture
+                            config.capture,
                           )
                         }
                       />
@@ -1113,7 +1120,7 @@ class Settings extends React.Component {
                             'capture',
                             'pixelChangeThreshold',
                             value,
-                            config.capture
+                            config.capture,
                           )
                         }
                       />
@@ -1215,7 +1222,7 @@ class Settings extends React.Component {
                           'capture',
                           'forwardwebrtc',
                           event,
-                          config.capture
+                          config.capture,
                         )
                       }
                     />
@@ -1236,7 +1243,7 @@ class Settings extends React.Component {
                           'capture',
                           'transcodingwebrtc',
                           event,
-                          config.capture
+                          config.capture,
                         )
                       }
                     />
@@ -1244,7 +1251,7 @@ class Settings extends React.Component {
                       <span>{t('settings.streaming.stun_turn_transcode')}</span>
                       <p>
                         {t(
-                          'settings.streaming.stun_turn_description_transcode'
+                          'settings.streaming.stun_turn_description_transcode',
                         )}
                       </p>
                     </div>
@@ -1261,7 +1268,7 @@ class Settings extends React.Component {
                           'capture',
                           'transcodingresolution',
                           value,
-                          config.capture
+                          config.capture,
                         )
                       }
                     />
@@ -1299,7 +1306,7 @@ class Settings extends React.Component {
                     noPadding
                     label={t('settings.persistence.kerberoshub_apiurl')}
                     placeholder={t(
-                      'settings.persistence.kerberoshub_description_apiurl'
+                      'settings.persistence.kerberoshub_description_apiurl',
                     )}
                     value={config.hub_uri}
                     onChange={(value) =>
@@ -1311,7 +1318,7 @@ class Settings extends React.Component {
                     iconright="activity"
                     label={t('settings.persistence.kerberoshub_publickey')}
                     placeholder={t(
-                      'settings.persistence.kerberoshub_description_publickey'
+                      'settings.persistence.kerberoshub_description_publickey',
                     )}
                     value={config.hub_key}
                     onChange={(value) =>
@@ -1323,7 +1330,7 @@ class Settings extends React.Component {
                     iconright="activity"
                     label={t('settings.persistence.kerberoshub_privatekey')}
                     placeholder={t(
-                      'settings.persistence.kerberoshub_description_privatekey'
+                      'settings.persistence.kerberoshub_description_privatekey',
                     )}
                     value={config.hub_private_key}
                     onChange={(value) =>
@@ -1335,7 +1342,7 @@ class Settings extends React.Component {
                     label={t('settings.persistence.kerberoshub_site')}
                     value={config.hub_site}
                     placeholder={t(
-                      'settings.persistence.kerberoshub_description_site'
+                      'settings.persistence.kerberoshub_description_site',
                     )}
                     onChange={(value) =>
                       this.onUpdateField('', 'hub_site', value, config)
@@ -1357,7 +1364,7 @@ class Settings extends React.Component {
                       </span>
                       <p>
                         {t(
-                          'settings.persistence.kerberoshub_encryption_description'
+                          'settings.persistence.kerberoshub_encryption_description',
                         )}
                       </p>
                     </div>
@@ -1432,7 +1439,7 @@ class Settings extends React.Component {
                         'capture.ipcamera',
                         'onvif_xaddr',
                         value,
-                        config.capture.ipcamera
+                        config.capture.ipcamera,
                       )
                     }
                   />
@@ -1446,7 +1453,7 @@ class Settings extends React.Component {
                         'capture.ipcamera',
                         'onvif_username',
                         value,
-                        config.capture.ipcamera
+                        config.capture.ipcamera,
                       )
                     }
                   />
@@ -1460,7 +1467,7 @@ class Settings extends React.Component {
                         'capture.ipcamera',
                         'onvif_password',
                         value,
-                        config.capture.ipcamera
+                        config.capture.ipcamera,
                       )
                     }
                   />
@@ -1499,7 +1506,7 @@ class Settings extends React.Component {
                           'encryption',
                           'enabled',
                           event,
-                          config.encryption
+                          config.encryption,
                         )
                       }
                     />
@@ -1520,7 +1527,7 @@ class Settings extends React.Component {
                           'encryption',
                           'recordings',
                           event,
-                          config.encryption
+                          config.encryption,
                         )
                       }
                     />
@@ -1530,7 +1537,7 @@ class Settings extends React.Component {
                       </span>
                       <p>
                         {t(
-                          'settings.overview.description_encryption_recordings_enabled'
+                          'settings.overview.description_encryption_recordings_enabled',
                         )}
                       </p>
                     </div>
@@ -1546,7 +1553,7 @@ class Settings extends React.Component {
                         'encryption',
                         'fingerprint',
                         value,
-                        config.encryption
+                        config.encryption,
                       )
                     }
                   />
@@ -1560,7 +1567,7 @@ class Settings extends React.Component {
                         'encryption',
                         'private_key',
                         value,
-                        config.encryption
+                        config.encryption,
                       )
                     }
                   />
@@ -1574,7 +1581,7 @@ class Settings extends React.Component {
                         'encryption',
                         'symmetric_key',
                         value,
-                        config.encryption
+                        config.encryption,
                       )
                     }
                   />
@@ -1662,7 +1669,7 @@ class Settings extends React.Component {
                           '',
                           'realtimeprocessing',
                           event,
-                          config
+                          config,
                         )
                       }
                     />
@@ -1672,7 +1679,7 @@ class Settings extends React.Component {
                       </span>
                       <p>
                         {t(
-                          'settings.streaming.description_realtimeprocessing_enabled'
+                          'settings.streaming.description_realtimeprocessing_enabled',
                         )}
                       </p>
                     </div>
@@ -1688,7 +1695,7 @@ class Settings extends React.Component {
                         '',
                         'realtimeprocessing_topic',
                         value,
-                        config
+                        config,
                       )
                     }
                   />
@@ -1734,18 +1741,18 @@ class Settings extends React.Component {
                       <Input
                         noPadding
                         label={t(
-                          'settings.recording.autoclean_max_directory_size'
+                          'settings.recording.autoclean_max_directory_size',
                         )}
                         value={config.max_directory_size}
                         placeholder={t(
-                          'settings.recording.autoclean_description_enable'
+                          'settings.recording.autoclean_description_enable',
                         )}
                         onChange={(value) =>
                           this.onUpdateNumberField(
                             '',
                             'max_directory_size',
                             value,
-                            config
+                            config,
                           )
                         }
                       />
@@ -1778,7 +1785,7 @@ class Settings extends React.Component {
                             'capture',
                             'fragmented',
                             event,
-                            config.capture
+                            config.capture,
                           )
                         }
                       />
@@ -1788,7 +1795,7 @@ class Settings extends React.Component {
                         </span>
                         <p>
                           {t(
-                            'settings.recording.fragmentedrecordings_description_enable'
+                            'settings.recording.fragmentedrecordings_description_enable',
                           )}
                         </p>
                       </div>
@@ -1798,18 +1805,18 @@ class Settings extends React.Component {
                       <Input
                         noPadding
                         label={t(
-                          'settings.recording.fragmentedrecordings_duration'
+                          'settings.recording.fragmentedrecordings_duration',
                         )}
                         value={config.capture.fragmentedduration}
                         placeholder={t(
-                          'settings.recording.fragmentedrecordings_description_duration'
+                          'settings.recording.fragmentedrecordings_description_duration',
                         )}
                         onChange={(value) =>
                           this.onUpdateNumberField(
                             'capture',
                             'fragmentedduration',
                             value,
-                            config.capture
+                            config.capture,
                           )
                         }
                       />
@@ -1855,7 +1862,7 @@ class Settings extends React.Component {
                             </span>
                             <p>
                               {t(
-                                'settings.conditions.timeofinterest_description_enabled'
+                                'settings.conditions.timeofinterest_description_enabled',
                               )}
                             </p>
                           </div>
@@ -1877,7 +1884,7 @@ class Settings extends React.Component {
                                     0,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1891,7 +1898,7 @@ class Settings extends React.Component {
                                     0,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1905,7 +1912,7 @@ class Settings extends React.Component {
                                     0,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1919,7 +1926,7 @@ class Settings extends React.Component {
                                     0,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1939,7 +1946,7 @@ class Settings extends React.Component {
                                     1,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1953,7 +1960,7 @@ class Settings extends React.Component {
                                     1,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1967,7 +1974,7 @@ class Settings extends React.Component {
                                     1,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -1981,7 +1988,7 @@ class Settings extends React.Component {
                                     1,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2001,7 +2008,7 @@ class Settings extends React.Component {
                                     2,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2015,7 +2022,7 @@ class Settings extends React.Component {
                                     2,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2029,7 +2036,7 @@ class Settings extends React.Component {
                                     2,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2043,7 +2050,7 @@ class Settings extends React.Component {
                                     2,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2063,7 +2070,7 @@ class Settings extends React.Component {
                                     3,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2077,7 +2084,7 @@ class Settings extends React.Component {
                                     3,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2091,7 +2098,7 @@ class Settings extends React.Component {
                                     3,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2105,7 +2112,7 @@ class Settings extends React.Component {
                                     3,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2125,7 +2132,7 @@ class Settings extends React.Component {
                                     4,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2139,7 +2146,7 @@ class Settings extends React.Component {
                                     4,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2153,7 +2160,7 @@ class Settings extends React.Component {
                                     4,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2167,7 +2174,7 @@ class Settings extends React.Component {
                                     4,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2187,7 +2194,7 @@ class Settings extends React.Component {
                                     5,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2201,7 +2208,7 @@ class Settings extends React.Component {
                                     5,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2215,7 +2222,7 @@ class Settings extends React.Component {
                                     5,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2229,7 +2236,7 @@ class Settings extends React.Component {
                                     5,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2249,7 +2256,7 @@ class Settings extends React.Component {
                                     6,
                                     'start1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2263,7 +2270,7 @@ class Settings extends React.Component {
                                     6,
                                     'end1',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2277,7 +2284,7 @@ class Settings extends React.Component {
                                     6,
                                     'start2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2291,7 +2298,7 @@ class Settings extends React.Component {
                                     6,
                                     'end2',
                                     event,
-                                    config.timetable
+                                    config.timetable,
                                   );
                                 }}
                               />
@@ -2367,7 +2374,7 @@ class Settings extends React.Component {
                           '',
                           'remove_after_upload',
                           event,
-                          config
+                          config,
                         )
                       }
                     />
@@ -2377,7 +2384,7 @@ class Settings extends React.Component {
                       </span>
                       <p>
                         {t(
-                          'settings.persistence.remove_after_upload_description'
+                          'settings.persistence.remove_after_upload_description',
                         )}
                       </p>
                     </div>
@@ -2418,7 +2425,7 @@ class Settings extends React.Component {
                         noPadding
                         label={t('settings.persistence.kerberoshub_region')}
                         placeholder={t(
-                          'settings.persistence.kerberoshub_description_region'
+                          'settings.persistence.kerberoshub_description_region',
                         )}
                         value={config.s3 ? config.s3.region : ''}
                         onChange={(value) =>
@@ -2433,7 +2440,7 @@ class Settings extends React.Component {
                         noPadding
                         label={t('settings.persistence.kerberosvault_apiurl')}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_apiurl'
+                          'settings.persistence.kerberosvault_description_apiurl',
                         )}
                         value={config.kstorage ? config.kstorage.uri : ''}
                         onChange={(value) =>
@@ -2441,7 +2448,7 @@ class Settings extends React.Component {
                             'kstorage',
                             'uri',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
@@ -2449,7 +2456,7 @@ class Settings extends React.Component {
                         noPadding
                         label={t('settings.persistence.kerberosvault_provider')}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_provider'
+                          'settings.persistence.kerberosvault_description_provider',
                         )}
                         value={config.kstorage ? config.kstorage.provider : ''}
                         onChange={(value) =>
@@ -2457,17 +2464,17 @@ class Settings extends React.Component {
                             'kstorage',
                             'provider',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
                       <Input
                         noPadding
                         label={t(
-                          'settings.persistence.kerberosvault_directory'
+                          'settings.persistence.kerberosvault_directory',
                         )}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_directory'
+                          'settings.persistence.kerberosvault_description_directory',
                         )}
                         value={config.kstorage ? config.kstorage.directory : ''}
                         onChange={(value) =>
@@ -2475,7 +2482,7 @@ class Settings extends React.Component {
                             'kstorage',
                             'directory',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
@@ -2483,10 +2490,10 @@ class Settings extends React.Component {
                         type="password"
                         iconright="activity"
                         label={t(
-                          'settings.persistence.kerberosvault_accesskey'
+                          'settings.persistence.kerberosvault_accesskey',
                         )}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_accesskey'
+                          'settings.persistence.kerberosvault_description_accesskey',
                         )}
                         value={
                           config.kstorage ? config.kstorage.access_key : ''
@@ -2496,7 +2503,7 @@ class Settings extends React.Component {
                             'kstorage',
                             'access_key',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
@@ -2504,10 +2511,10 @@ class Settings extends React.Component {
                         type="password"
                         iconright="activity"
                         label={t(
-                          'settings.persistence.kerberosvault_secretkey'
+                          'settings.persistence.kerberosvault_secretkey',
                         )}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_secretkey'
+                          'settings.persistence.kerberosvault_description_secretkey',
                         )}
                         value={
                           config.kstorage
@@ -2519,17 +2526,17 @@ class Settings extends React.Component {
                             'kstorage',
                             'secret_access_key',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
                       <Input
                         noPadding
                         label={t(
-                          'settings.persistence.kerberosvault_maxretries'
+                          'settings.persistence.kerberosvault_maxretries',
                         )}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_maxretries'
+                          'settings.persistence.kerberosvault_description_maxretries',
                         )}
                         value={
                           config.kstorage ? config.kstorage.max_retries : ''
@@ -2539,7 +2546,7 @@ class Settings extends React.Component {
                             'kstorage',
                             'max_retries',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
@@ -2548,7 +2555,7 @@ class Settings extends React.Component {
                         noPadding
                         label={t('settings.persistence.kerberosvault_timeout')}
                         placeholder={t(
-                          'settings.persistence.kerberosvault_description_timeout'
+                          'settings.persistence.kerberosvault_description_timeout',
                         )}
                         value={config.kstorage ? config.kstorage.timeout : ''}
                         onChange={(value) =>
@@ -2556,7 +2563,7 @@ class Settings extends React.Component {
                             'kstorage',
                             'timeout',
                             value,
-                            config.kstorage
+                            config.kstorage,
                           )
                         }
                       />
@@ -2568,7 +2575,7 @@ class Settings extends React.Component {
                         noPadding
                         label={t('settings.persistence.dropbox_directory')}
                         placeholder={t(
-                          'settings.persistence.dropbox_description_directory'
+                          'settings.persistence.dropbox_description_directory',
                         )}
                         value={config.dropbox ? config.dropbox.directory : ''}
                         onChange={(value) =>
@@ -2576,7 +2583,7 @@ class Settings extends React.Component {
                             'dropbox',
                             'directory',
                             value,
-                            config.dropbox
+                            config.dropbox,
                           )
                         }
                       />
@@ -2584,7 +2591,7 @@ class Settings extends React.Component {
                         noPadding
                         label={t('settings.persistence.dropbox_accesstoken')}
                         placeholder={t(
-                          'settings.persistence.dropbox_description_accesstoken'
+                          'settings.persistence.dropbox_description_accesstoken',
                         )}
                         value={
                           config.dropbox ? config.dropbox.access_token : ''
@@ -2594,7 +2601,7 @@ class Settings extends React.Component {
                             'dropbox',
                             'access_token',
                             value,
-                            config.dropbox
+                            config.dropbox,
                           )
                         }
                       />
@@ -2629,14 +2636,14 @@ class Settings extends React.Component {
                 <BlockBody>
                   <p>
                     {t(
-                      'settings.persistence.description_secondary_persistence'
+                      'settings.persistence.description_secondary_persistence',
                     )}
                   </p>
                   <Input
                     noPadding
                     label={t('settings.persistence.kerberosvault_apiurl')}
                     placeholder={t(
-                      'settings.persistence.kerberosvault_description_apiurl'
+                      'settings.persistence.kerberosvault_description_apiurl',
                     )}
                     value={
                       config.kstorage_secondary
@@ -2648,7 +2655,7 @@ class Settings extends React.Component {
                         'kstorage_secondary',
                         'uri',
                         value,
-                        config.kstorage_secondary
+                        config.kstorage_secondary,
                       )
                     }
                   />
@@ -2656,7 +2663,7 @@ class Settings extends React.Component {
                     noPadding
                     label={t('settings.persistence.kerberosvault_provider')}
                     placeholder={t(
-                      'settings.persistence.kerberosvault_description_provider'
+                      'settings.persistence.kerberosvault_description_provider',
                     )}
                     value={
                       config.kstorage_secondary
@@ -2668,7 +2675,7 @@ class Settings extends React.Component {
                         'kstorage_secondary',
                         'provider',
                         value,
-                        config.kstorage_secondary
+                        config.kstorage_secondary,
                       )
                     }
                   />
@@ -2676,7 +2683,7 @@ class Settings extends React.Component {
                     noPadding
                     label={t('settings.persistence.kerberosvault_directory')}
                     placeholder={t(
-                      'settings.persistence.kerberosvault_description_directory'
+                      'settings.persistence.kerberosvault_description_directory',
                     )}
                     value={
                       config.kstorage_secondary
@@ -2688,7 +2695,7 @@ class Settings extends React.Component {
                         'kstorage_secondary',
                         'directory',
                         value,
-                        config.kstorage_secondary
+                        config.kstorage_secondary,
                       )
                     }
                   />
@@ -2697,7 +2704,7 @@ class Settings extends React.Component {
                     iconright="activity"
                     label={t('settings.persistence.kerberosvault_accesskey')}
                     placeholder={t(
-                      'settings.persistence.kerberosvault_description_accesskey'
+                      'settings.persistence.kerberosvault_description_accesskey',
                     )}
                     value={
                       config.kstorage_secondary
@@ -2709,7 +2716,7 @@ class Settings extends React.Component {
                         'kstorage_secondary',
                         'access_key',
                         value,
-                        config.kstorage_secondary
+                        config.kstorage_secondary,
                       )
                     }
                   />
@@ -2718,7 +2725,7 @@ class Settings extends React.Component {
                     iconright="activity"
                     label={t('settings.persistence.kerberosvault_secretkey')}
                     placeholder={t(
-                      'settings.persistence.kerberosvault_description_secretkey'
+                      'settings.persistence.kerberosvault_description_secretkey',
                     )}
                     value={
                       config.kstorage_secondary
@@ -2730,7 +2737,7 @@ class Settings extends React.Component {
                         'kstorage_secondary',
                         'secret_access_key',
                         value,
-                        config.kstorage_secondary
+                        config.kstorage_secondary,
                       )
                     }
                   />
@@ -2809,5 +2816,5 @@ Settings.propTypes = {
 };
 
 export default withTranslation()(
-  withRouter(connect(mapStateToProps, mapDispatchToProps)(Settings))
+  withRouter(connect(mapStateToProps, mapDispatchToProps)(Settings)),
 );
