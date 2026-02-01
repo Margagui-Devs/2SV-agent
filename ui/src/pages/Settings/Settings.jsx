@@ -97,13 +97,7 @@ class Settings extends React.Component {
       general: ['timezone', 'generic', 'general'],
       mqtt: ['mqtt', 'message broker', 'events', 'broker'],
       'stun-turn': ['webrtc', 'stun', 'turn', 'livestreaming'],
-      'kerberos-hub': [
-        '2sv hub',
-        'dashboard',
-        'agents',
-        'monitoring',
-        'site',
-      ],
+      'kerberos-hub': ['2sv hub', 'dashboard', 'agents', 'monitoring', 'site'],
       persistence: [
         '2sv hub',
         '2sv vault',
